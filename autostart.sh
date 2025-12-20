@@ -1,5 +1,4 @@
 #!/bin/bash
-# 自启动脚本 仅作参考
 
 set +e
 
@@ -10,7 +9,7 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 swaync -c ~/.config/mango/swaync/config.jsonc -s ~/.config/mango/swaync/style.css >/dev/null 2>&1 &
 
 # night light
-wlsunset -T 3501 -t 3500 >/dev/null 2>&1 &
+wlsunset -T 3501 -t 3500 -l 32.5 -L -83.5 >/dev/null 2>&1 &
 
 # wallpaper
 swaybg -i ~/.config/mango/wallpaper/czd.png >/dev/null 2>&1 &
@@ -39,7 +38,7 @@ blueman-applet >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
 
 # Permission authentication
-/usr/lib/xfce-polkit/xfce-polkit >/dev/null 2>&1 &
+/usr/libexec/xfce-polkit >/dev/null 2>&1 &
 
 # inhibit by audio
 sway-audio-idle-inhibit >/dev/null 2>&1 &
