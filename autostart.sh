@@ -38,7 +38,7 @@ blueman-applet >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
 
 # Permission authentication
-/usr/libexec/xfce-polkit >/dev/null 2>&1 &
+/usr/libexec/xfce-polkit &
 
 # inhibit by audio
 sway-audio-idle-inhibit >/dev/null 2>&1 &
