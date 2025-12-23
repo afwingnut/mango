@@ -1,7 +1,9 @@
 #!/bin/bash
 
 set +e
-
+#
+# TIP: On new installations remove the ">/dev/null 2>&1" entries below to ensure there are no configuration issues.
+#
 # obs
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
 
