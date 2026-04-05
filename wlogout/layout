@@ -16,7 +16,7 @@
     "label" : "shutdown",
     "action" : "shutdown -h now",
     "text" : "Shutdown ",
-    "keybind" : "d"
+    "keybind" : "s"
 }
 
 {
@@ -30,7 +30,7 @@
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : " Suspend ",
-    "keybind" : "s"
+    "keybind" : "z"
 }
 
 {

@@ -42,6 +42,13 @@ nm-applet >/dev/null 2>&1 &
 # Permission authentication
 /usr/libexec/xfce-polkit &
 
+# Activate automatic sleep when idle
+ swayidle -w \
+                timeout 300 'swaylock -f -c 000000 --text-wrong "Try again!" --text-wrong-color FFFFFF' \
+                timeout 600 'swaymsg "output * dpms off"' \
+                     resume 'swaymsg "output * dpms on"' \
+                before-sleep 'swaylock -f -c 000000'
+
 # inhibit by audio
 sway-audio-idle-inhibit >/dev/null 2>&1 &
 
