@@ -50,7 +50,8 @@ nm-applet >/dev/null 2>&1 &
                 before-sleep 'swaylock -f -c 000000'
 
 # inhibit by audio
-sway-audio-idle-inhibit >/dev/null 2>&1 &
+# sway-audio-idle-inhibit >/dev/null 2>&1 &
+sway-audio-idle-inhibit 
 
 # change light value and volume value by swayosd-client in keybind
 swayosd-server >/dev/null 2>&1 &
