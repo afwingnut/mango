@@ -5,45 +5,45 @@ set +e
 # TIP: On new installations remove the ">/dev/null 2>&1" entries below to ensure there are no configuration issues.
 #
 # obs
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
+#dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
 
 # notify
-swaync -c ~/.config/mango/swaync/config.jsonc -s ~/.config/mango/swaync/style.css >/dev/null 2>&1 &
+# swaync -c ~/.config/mango/swaync/config.jsonc -s ~/.config/mango/swaync/style.css >/dev/null 2>&1 &
 
 # night light
-wlsunset -T 3501 -t 3500 -l 32.5 -L -83.5 >/dev/null 2>&1 &
+# wlsunset -T 3501 -t 3500 -l 32.5 -L -83.5 >/dev/null 2>&1 &
 
 # wallpaper
-swaybg -i ~/Pictures/wallpapers/wallpaper.jpg >/dev/null 2>&1 &
+# swaybg -i ~/Pictures/wallpapers/wallpaper.jpg >/dev/null 2>&1 &
 
 # top bar
-waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &
+# waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &
 
 
 # xwayland dpi scale
-echo "Xft.dpi: 140" | xrdb -merge #dpi缩放
+# echo "Xft.dpi: 140" | xrdb -merge #dpi缩放
 # xrdb merge ~/.Xresources >/dev/null 2>&1
 
 # ime input
-fcitx5 --replace -d >/dev/null 2>&1 &
+# fcitx5 --replace -d >/dev/null 2>&1 &
 
 # keep clipboard content
-wl-clip-persist --clipboard regular --reconnect-tries 0 >/dev/null 2>&1 &
+#wl-clip-persist --clipboard regular --reconnect-tries 0 >/dev/null 2>&1 &
 
 # clipboard content manager
-wl-paste --type text --watch cliphist store >/dev/null 2>&1 &
+#wl-paste --type text --watch cliphist store >/dev/null 2>&1 &
 
 # bluetooth 
-blueman-applet >/dev/null 2>&1 &
+# blueman-applet >/dev/null 2>&1 &
 
 # network
-nm-applet >/dev/null 2>&1 &
+# nm-applet >/dev/null 2>&1 &
 
 # Permission authentication
-/usr/libexec/xfce-polkit &
+# /usr/libexec/xfce-polkit &
 
 # Activate automatic sleep when idle
- swayidle -w \
+ #swayidle -w \
                 timeout 300 'swaylock -f -c 000000 --text-wrong "Try again!" --text-wrong-color FFFFFF' \
                 timeout 600 'swaymsg "output * dpms off"' \
                      resume 'swaymsg "output * dpms on"' \
@@ -51,7 +51,10 @@ nm-applet >/dev/null 2>&1 &
 
 # inhibit by audio
 # sway-audio-idle-inhibit >/dev/null 2>&1 &
-sway-audio-idle-inhibit 
+# sway-audio-idle-inhibit 
 
 # change light value and volume value by swayosd-client in keybind
-swayosd-server >/dev/null 2>&1 &
+#swayosd-server >/dev/null 2>&1 &
+
+#qs -c noctalia-shell >/dev/null 2>&1 &
+noctalia >/dev/null 2>&1 &
